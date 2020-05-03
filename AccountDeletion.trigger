@@ -4,7 +4,7 @@ trigger AccountDeletion on Account (before delete) {
                      WHERE Id IN (SELECT AccountId FROM Opportunity) AND
                      Id IN :Trigger.old]) {
         Trigger.oldMap.get(a.Id).addError(
-            'Cannot with related opportunities.');
+            'Cannot  related opportunities.');
     }
     
 }
